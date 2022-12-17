@@ -1,0 +1,82 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>D3: Time axis</title>
+    <script type="text/javascript" src="../d3.js"></script>
+  </head>
+
+  <body>
+    <script type="text/javascript">
+      //Width and height
+      var w = 500;
+      var h = 300;
+      var padding = 40;
+
+      var dataset, xScale, yScale, xAxis, yAxis; //Empty, for now
+
+      datataset = Object.assign(d3.csvParse("mncondo_sale_dof.csv"), {x: "Taxable Assessed Total"}, {y:"Sale Price"});
+
+        var xScale = d3
+          .scaleLinear()
+          .domain([
+            0,
+            d3.max(data, function (d) {
+              return d["Sale Price"];
+            }),
+          ])
+          .range([padding, w - padding]);
+
+        var yScale = d3
+          .scaleLinear()
+          .domain([
+            0,
+            d3.max(data, function (d) {
+              return d["Taxable Ass"];
+            }),
+          ])
+          .range([h - padding, padding]);
+
+        var cScale = d3
+          .scaleLinear()
+          .domain([
+            0,
+            d3.max(data, function (d) {
+              return parseFloat(d["median_income"]);
+            }),
+          ])
+          .range(["teal", "grey"]);
+
+        var rScale = d3
+          .scaleLinear()
+          .domain([
+            0,
+            d3.max(data, function (d) {
+              return parseFloat(d["dropout_rate"]);
+            }),
+          ])
+          .range([2, 10]);
+
+        xAxis = (g, x) => g
+          .attr("transform", `translate(0,${height - margin.bottom})`)
+          .call(d3.axisBottom(x).ticks(width / 80).tickSizeOuter(0))
+
+        yAxis = (g, y) => g
+          .attr("transform", `translate(${margin.left},0)`)
+          .call(d3.axisLeft(y).ticks(null, "s"))
+          .call(g => g.select(".domain").remove())
+          .call(g => g.select(".tick:last-of-type text").clone()
+              .attr("x", 3)
+              .attr("text-anchor", "start")
+              .attr("font-weight", "bold")
+              .text(data.y))
+
+        area = (data, x) => d3.area()
+        .curve(d3.curveStepAfter)
+        .x(d => x(d.date))
+        .y0(y(0))
+        .y1(d => y(d.value))
+        (data)
+      });
+    </script>
+  </body>
+</html>
