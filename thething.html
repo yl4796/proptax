@@ -28,16 +28,15 @@
     />
 
     <link rel="stylesheet" href="style.css" />
-
   </head>
 
   <body>
-    <div class="topnav" >
-      <a class="active" href="#title">GO BACK TO TOP</a>
+    <div class="topnav">
+      <a class="active" href="#title">Home</a>
       <a href="#map">Interactive Map</a>
-      <a href="#PART2">Map</a>
-      <a href="#PAdafadRT3">Spilling the Tea</a>
-      <a href="#PARadgadsgT3">Discussion</a>
+      <a href="#subtitle">Background</a>
+      <a href="#container">Deep Dive</a>
+      <a href="#panel_1">Interactive Chart</a>
     </div>
 
     <div id="title" class="header">
@@ -233,135 +232,264 @@
           });
         });
       });
-      
-      map.on('load', function() {
-        map.loadImage("eye.png", function(error, image) {
+
+      map.on("load", function () {
+        map.loadImage("eye.png", function (error, image) {
           if (error) throw error;
           map.addImage("eye", image);
-        })
-        map.addSource('places', {
-          'type': 'geojson',
-          'data': {
-            'type': 'FeatureCollection',
-            'features': [
+        });
+        map.addSource("places", {
+          type: "geojson",
+          data: {
+            type: "FeatureCollection",
+            features: [
               {
-                'type': 'Feature',
-                'properties': {
-                  'description': '<strong> 220 CENTRAL PARK SOUTH, 19J </strong> <br> Sale Price: $188,000,000 <br> 2022-2023 Property Tax Bill: <a href="https://a836-edms.nyc.gov/dctm-rest/repositories/dofedmspts/StatementSearch?bbl=1010301017&stmtDate=20220604&stmtType=SOA" target="_blank" title="Opens in a new window"> $16,720.42 </a><br> Sale Year: 2022 <br> Percentage of Property Tax to Sales Price: 0.009%<br> DOF-Assessed "Taxable" Amount: $137,347 <br> DOF-Assessed "Market Value": $305,215 <br> Owner: 220 NYC HOLDINGS, LP <br>',
-                  'icon': 'eye'
+                type: "Feature",
+                properties: {
+                  description:
+                    '<strong> 220 CENTRAL PARK SOUTH, 19J </strong> <br> Sale Price: $188,000,000 <br> 2022-2023 Property Tax Bill: <a href="https://a836-edms.nyc.gov/dctm-rest/repositories/dofedmspts/StatementSearch?bbl=1010301017&stmtDate=20220604&stmtType=SOA" target="_blank" title="Opens in a new window"> $16,720.42 </a><br> Sale Year: 2022 <br> Percentage of Property Tax to Sales Price: 0.009%<br> DOF-Assessed "Taxable" Amount: $137,347 <br> DOF-Assessed "Market Value": $305,215 <br> Owner: 220 NYC HOLDINGS, LP <br>',
+                  icon: "eye",
                 },
-                'geometry': {
-                  'type': 'Point',
-                  'coordinates': [-73.982, 40.767]
-                }
+                geometry: {
+                  type: "Point",
+                  coordinates: [-73.982, 40.767],
+                },
               },
 
               {
-                'type': 'Feature',
-                'properties': {
-                  'description':
-                  '<strong> 220 CENTRAL PARK SOUTH, PH 73 </strong> <br> Sale Price: $188,000,000 <br> 2022-2023 Property Tax Bill: <a href="https://a836-edms.nyc.gov/dctm-rest/repositories/dofedmspts/StatementSearch?bbl=1010301105&stmtDate=20221119&stmtType=SOA" target="_blank" title="Opens in a new window"> $373,476.92</a><br> Sale Year: 2022 <br> Percentage of Property Tax to Sales Price: 0.2%<br> DOF-Assessed "Taxable" Amount: $3,044,566 <br> DOF-Assessed "Market Value": $6,765,715<br> Owner: 220 NYC HOLDINGS, LP <br>',
-                  'icon': 'eye'
+                type: "Feature",
+                properties: {
+                  description:
+                    '<strong> 220 CENTRAL PARK SOUTH, PH 73 </strong> <br> Sale Price: $188,000,000 <br> 2022-2023 Property Tax Bill: <a href="https://a836-edms.nyc.gov/dctm-rest/repositories/dofedmspts/StatementSearch?bbl=1010301105&stmtDate=20221119&stmtType=SOA" target="_blank" title="Opens in a new window"> $373,476.92</a><br> Sale Year: 2022 <br> Percentage of Property Tax to Sales Price: 0.2%<br> DOF-Assessed "Taxable" Amount: $3,044,566 <br> DOF-Assessed "Market Value": $6,765,715<br> Owner: 220 NYC HOLDINGS, LP <br>',
+                  icon: "eye",
                 },
-                'geometry': {
-                  'type': 'Point',
-                  'coordinates': [-73.9822, 40.7672]
-                }
+                geometry: {
+                  type: "Point",
+                  coordinates: [-73.9822, 40.7672],
+                },
               },
               {
-                'type': 'Feature',
-                'properties': {
-                  'description':
-                  '<strong> 220 CENTRAL PARK SOUTH, 19J </strong> <br> Sale Price: $82,500,000 <br> 2022-2023 Property Tax Bill: <a href="https://a836-edms.nyc.gov/dctm-rest/repositories/dofedmspts/StatementSearch?bbl=1010301092&stmtDate=20220604&stmtType=SOA" target="_blank" title="Opens in a new window">$105,435.19 </a><br> Sale Year: 2022 <br> Percentage of Property Tax to Sales Price: 0.13% <br>DOF-Assessed "Taxable" Amount: $1,748,167 <br> DOF-Assessed "Market Value": $3,884,825 <br> Owner: RICE5, LLC <br>',
-                  'icon': 'eye'
+                type: "Feature",
+                properties: {
+                  description:
+                    '<strong> 220 CENTRAL PARK SOUTH, 19J </strong> <br> Sale Price: $82,500,000 <br> 2022-2023 Property Tax Bill: <a href="https://a836-edms.nyc.gov/dctm-rest/repositories/dofedmspts/StatementSearch?bbl=1010301092&stmtDate=20220604&stmtType=SOA" target="_blank" title="Opens in a new window">$105,435.19 </a><br> Sale Year: 2022 <br> Percentage of Property Tax to Sales Price: 0.13% <br>DOF-Assessed "Taxable" Amount: $1,748,167 <br> DOF-Assessed "Market Value": $3,884,825 <br> Owner: RICE5, LLC <br>',
+                  icon: "eye",
                 },
-                'geometry': {
-                  'type': 'Point',
-                  'coordinates': [-73.9823, 40.7673]
-                }
-              }
-            ]
-          }
+                geometry: {
+                  type: "Point",
+                  coordinates: [-73.9823, 40.7673],
+                },
+              },
+            ],
+          },
         });
 
         map.addLayer({
-          'id': 'places',
-          'type': 'symbol',
-          'source': 'places',
-          'layout': {
-            'icon-image': "eye",
-            'icon-size': 0.05,
-            'icon-allow-overlap': true
+          id: "places",
+          type: "symbol",
+          source: "places",
+          layout: {
+            "icon-image": "eye",
+            "icon-size": 0.05,
+            "icon-allow-overlap": true,
           },
         });
-        
-        map.on('click', 'places', (e) => {
+
+        map.on("click", "places", (e) => {
           // Copy coordinates array.
           const coordinates = e.features[0].geometry.coordinates.slice();
           const description = e.features[0].properties.description;
-          
+
           // Ensure that if the map is zoomed out such that multiple
           // copies of the feature are visible, the popup appears
           // over the copy being pointed to.
           while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
             coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
           }
-          
+
           new mapboxgl.Popup()
-          .setLngLat(coordinates)
-          .setHTML(description)
-          .addTo(map);
+            .setLngLat(coordinates)
+            .setHTML(description)
+            .addTo(map);
         });
-        
+
         // Change the cursor to a pointer when the mouse is over the places layer.
-        map.on('mouseenter', 'places', () => {
-          map.getCanvas().style.cursor = 'pointer';
+        map.on("mouseenter", "places", () => {
+          map.getCanvas().style.cursor = "pointer";
         });
-        
+
         // Change it back to a pointer when it leaves.
-        map.on('mouseleave', 'places', () => {
-          map.getCanvas().style.cursor = '';
+        map.on("mouseleave", "places", () => {
+          map.getCanvas().style.cursor = "";
         });
       });
-
-  </script>
+    </script>
 
     <div id="container" class="container" style="overflow: scroll">
+      <div id="subtitle" class="header">
+        <h6>Background</h6>
+        <h5 class="tab">
+          Property tax in New York City exists in its current form in spite of
+          precedent attempts at reform, as well as mounting calls in the past
+          two years to overhaul what is widely regarded to be a regressive and
+          deluding system. In 2018, Mayor Bill de Blasio and City Council
+          Speaker Corey Johnson established the New York City Advisory
+          Commission on Property Tax Reform (henceforth regarded as ‘the
+          Commission’), which was tasked to provide recommendations. After four
+          years and a global pandemic, the Commission’s final policy
+          recommendations published in 2021 are beginning to take real estate in
+          public discourse.
+        </h5>
+        <br />
+        <h5 class="tab">
+          Current policy proposals made by the Commission and subsequent
+          advocacy movements break down datasets using quantiles, implying that
+          the top 25 percentile of condos based on their market sales value
+          should be regarded as one comprising class of taxpayers. This analysis
+          seeks to range of the market sales values even just within the 25
+          percentile and posit policy considerations based on finer
+          granularities in the potential tax base. In essence, this research
+          calls into question whether policy considerations should problematize
+          a property tax environment that would levy the same tax rate onto a
+          unit that last sold for $5 million as one that sold for $180 million.
+        </h5>
+      </div>
+
       <div id="panel" class="panel">
-        <h3>Spatial distribution of the top 1%</h3>
-        <button id="fly"> Click for the <br> Most Expensive Condo</button>
+        <h6>About the Map</h6>
+        <h5>
+          All dots represent all buildings with one or more single-unit
+          residential properties, accounting for approximately 18,640 condos and
+          co-ops in just Manhattan alone. <br />
+          <br />
+          The red points are buildings with units that have the top 1% of the
+          most expensive units, based on recent rolling sales data between 2019
+          and 2022
+        </h5>
+        <br />
+        <button id="fly">
+          Click to see the building with the most expensive and chronically
+          undertaxed units <br /><br />
+          (Click the Eye Icons for more information)<br />
+        </button>
         <script>
-           let isAtStart = true;
- 
-            document.getElementById('fly').addEventListener('click', () => {
+          let isAtStart = true;
+
+          document.getElementById("fly").addEventListener("click", () => {
+            map.flyTo({
+              center: [-73.982, 40.767],
+              zoom: 18,
+              curve: 2,
+              duration: 6000, // Animate over 12 seconds
+              essential: true, // This animation is considered essential with
+              //respect to prefers-reduced-motion
+            });
+
             // depending on whether we're currently at point a or b,
             // aim for point a or b
             const target = isAtStart ? end : start;
             isAtStart = !isAtStart;
-
-            map.flyTo({
-              center: target,
-              duration: 12000, // Animate over 12 seconds
-            essential: true // This animation is considered essential with
-            //respect to prefers-reduced-motion
-            });
-            });
+          });
         </script>
-        <div id="chartAnimation" class="chartAnimation">
-          <svg>
-            
-          </svg>
-        </div>
       </div>
 
-      <div id="panel" class="panel">
-        <h3>Spatial distribution of the top 1%</h3>
-        <div id="chartAnimation">
-          <svg>
-            
-          </svg>
-        </div>
+      <div id="panel_1" class="panel">
+        <h6>Interactive Chart</h6>
+        <h5>Chart description here</h5>
       </div>
+
+        <div id="dataviz_axisZoom" class="panel"></div>
+        <!-- <script>
+          var margin = {top: 0, right: 0, bottom: 20, left: 20},
+          width =  350 - margin.left - margin.right,
+          height = 250 - margin.top - margin.bottom;
+
+          // append the SVG object to the body of the page
+          var SVG = d3.select("#dataviz_axisZoom")
+          .append("svg")
+          .attr("width", width + margin.left + margin.right)
+          .attr("height", height + margin.top + margin.bottom)
+          .append("g")
+          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+          d3.csv("df75.csv", function(data) {
+            // Add X axis
+            var x = d3.scaleLinear()
+              .domain([4, 8])
+              .range([ 0, width ]);
+
+            var xAxis = SVG.append("g")
+            .attr("transform", "translate(0," + height + ")")
+            .call(d3.axisBottom(x));
+
+            // Add Y axis
+            var y = d3.scaleLinear()
+              .domain([0, 9])
+              .range([ height, 0]);
+
+            var yAxis = SVG.append("g")
+            .call(d3.axisLeft(y));
+          })
+
+          // Add a clipPath: everything out of this area won't be drawn.
+          var clip = SVG.append("defs").append("SVG:clipPath")
+          .attr("id", "clip")
+          .append("SVG:rect")
+          .attr("width", width )
+          .attr("height", height )
+          .attr("x", 0)
+          .attr("y", 0);
+
+          // Create the scatter variable: where both the circles and the brush take place
+          var scatter = SVG.append('g')
+          .attr("clip-path", "url(#clip)")
+
+          // Add circles
+
+          scatter
+          .selectAll("circle")
+          .data(data)
+          .enter()
+          .append("circle")
+          .attr("cx", function (d) { return x(d.Sale_Price); } )
+          .attr("cy", function (d) { return y(d.Assessed_Taxable_Value); } )
+          .attr("r", 8)
+          .style("fill", "#61a3a9")
+          .style("opacity", 0.5)
+
+        // Set the zoom and Pan features: how much you can zoom, on which part, and what to do when there is a zoom
+        var zoom = d3.zoom()
+            .scaleExtent([.5, 20])  // This control how much you can unzoom (x0.5) and zoom (x20)
+            .extent([[0, 0], [width, height]])
+            .on("zoom", updateChart);
+
+        // This add an invisible rect on top of the chart area. This rect can recover pointer events: necessary to understand when the user zoom
+        SVG.append("rect")
+            .attr("width", width)
+            .attr("height", height)
+            .style("fill", "none")
+            .style("pointer-events", "all")
+            .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
+            .call(zoom);
+
+          function updateChart() {
+            // recover the new scale
+            var newX = d3.event.transform.rescaleX(x);
+            var newY = d3.event.transform.rescaleY(y);
+
+            // update axes with these new boundaries
+            xAxis.call(d3.axisBottom(newX))
+            yAxis.call(d3.axisLeft(newY))
+
+            // update circle position
+            scatter
+              .selectAll("circle")
+              .attr('cx', function(d) {return newX(d.Sale_Price)})
+              .attr('cy', function(d) {return newY(d.Assessed_Taxable_Value)});
+            }
+      </script> -->
+      </div>
+    </div>
 
     <script src="animation.js"></script>
   </body>

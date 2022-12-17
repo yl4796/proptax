@@ -13,41 +13,46 @@ head {
 }
 
 .header {
-  padding: 20px;
+  padding: 15px;
   text-align: center;
-  background: black;
+  height: fit-content;
+  width: 85%;
+  margin: auto;
+  padding-bottom: 20px;
   color: white;
 }
 
+.tab {
+  text-indent: 40px;
+}
+
 body {
-  font-size: 25px;
   background-color: #000;
-  color: white;
-  font-family: "manrope";
+  color: black;
+  font-family: "manrope", sans-serif;
 }
 
 .container {
   float: right;
-  height: 600px;
-  width: 550px;
-  margin-right: 35px;
-  margin-left: 30px;
+  height: 550px;
+  width: 70vh;
+  margin-right: 5vh;
+  margin-left: 5vh;
+  font-family: "manrope", sans-serif;
+  overflow: scroll;
   background-color: rgb(39, 39, 39);
-  z-index: 300;
+  z-index: 30;
 }
-#chartAnimation {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 50%;
-  height: 80%;
-  z-index: 50;
-}
+
 .panel {
-  width: 35%;
-  padding-left: 5px;
-  padding-top: 25vh;
-  padding-bottom: 25vh;
+  padding: 15px;
+  text-align: center;
+  height: fit-content;
+  width: 85%;
+  margin: auto;
+  padding: 10px;
+  color: white;
+  z-index: 250;
 }
 .panel:first-child {
   padding-top: 5vh;
@@ -61,14 +66,14 @@ body {
   position: absolute;
   margin-left: 30px;
   height: 550px;
-  width: 800px;
-  z-index: 200;
+  width: 830px;
+  z-index: 3;
 }
 
 .mapboxgl-popup {
   max-width: 400px;
   font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
-  color: darkslategrey;
+  color: #000;
 }
 
 h1 {
@@ -81,23 +86,26 @@ h1 {
 
 h2 {
   font-size: 18px;
-  padding: 10px;
+  padding: 5px;
   padding-right: 90px;
   padding-left: 90px;
+  font-family: "manrope", sans-serif;
   font-weight: lighter;
   color: white;
 }
 
 h3 {
-  font-size: 16px;
+  font-size: 18px;
   padding-bottom: 15px;
-  font-weight: bold;
+  font-family: "manrope", sans-serif;
+  font-weight: lighter;
   color: white;
 }
 
 h4 {
   font-size: 20px;
   line-height: 140%;
+  font-family: "manrope", sans-serif;
   padding-bottom: 15px;
   padding-left: 55px;
   padding-right: 55px;
@@ -105,8 +113,51 @@ h4 {
   font-weight: lighter;
 }
 
+h5 {
+  font-size: 14px;
+  font-family: "manrope", sans-serif;
+  text-align: left;
+  line-height: 150%;
+  color: white;
+  font-weight: lighter;
+}
+
+h6 {
+  font-size: 16px;
+  font-family: "manrope", sans-serif;
+  text-align: left;
+  line-height: 150%;
+  padding-bottom: 15px;
+  color: white;
+  font-weight: bold;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 circle:hover {
   fill: teal;
+}
+
+#dataviz_axisZoom {
+  width: 60vh;
+  height: 250px;
+  padding: 2vh;
+  position: relative;
+  margin: auto;
+  top: 0;
+  right: 0;
+  height: 80%;
+  z-index: 200;
 }
 
 #tooltip {
@@ -167,17 +218,17 @@ circle:hover {
 
 #fly {
   display: block;
-  /* position: relative; */
+  position: relative;
   margin: 0px auto;
   width: fit-content;
-  height: 60px;
-  padding: 10px;
+  height: 90px;
+  padding: 6px;
   border: none;
   border-radius: 3px;
   font-size: 14px;
   font-weight: bold;
   text-align: center;
   text-justify: auto;
-  color: #fff;
-  background: #ff4a09;
+  color: #5a3f1d;
+  background: #ffb350;
 }
